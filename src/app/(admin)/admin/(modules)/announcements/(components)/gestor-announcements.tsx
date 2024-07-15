@@ -4,13 +4,10 @@ import React, { ChangeEvent } from 'react'
 import { createClient } from "@/utils/supabase/client";
 import { toast } from 'react-toastify'
 import { Button } from "@/components/ui/button"
-import { BsImages, BsPaperclip } from "react-icons/bs";
+import { BsPaperclip } from "react-icons/bs";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -83,43 +80,6 @@ const GestorAnnouncements = ({ Announcements }: AnnouncementsProps) => {
     }
 
   };
-
-  // const handleDelete = async (id: string, imageUrl: string) => {
-
-
-  //   try {
-
-  //     const supabase = createClient();
-
-
-  //     const { data, error } = await supabase.storage
-  //       .from("Images")
-  //       .remove([imageUrl])
-
-  //     if (data) {
-  //       // toast.success("Imagen actualizada")
-  //       const response = await supabase.from("announcements")
-  //         .delete()
-  //         .eq('id', id)
-
-  //       if (response.data) {
-
-  //         toast.success("Anuncio eliminado")
-  //       }
-
-  //       if (response.data) {
-  //         toast.error("Error")
-  //       }
-  //     }
-  //     if (error) {
-  //       toast.error("Error")
-  //     }
-  //   } catch (error) {
-  //     toast.error("Error")
-  //   }
-
-  //   router.refresh()
-  // };
 
 
   const handleDelete = async (id: string, imageUrl: string) => {
@@ -429,26 +389,18 @@ const GestorAnnouncements = ({ Announcements }: AnnouncementsProps) => {
           <div className='flex flex-row justify-between gap-10'>
             <div className='flex flex-row gap-5'>
 
-              {data.order != 1 ?
-
-                <div className='flex'>
-                  {/* Up */}
-                  <Button variant={'default'} size={'icon'} onClick={() => {
-                    handleUpMove(data.id, data.imageUrl, data.order);
-                  }}
-                  >
-                    <ArrowUp></ArrowUp>
-                  </Button>
-                </div>
-
-                :
-                null
-              }
-
-
-
-              {/* Down */}
               <div className='flex'>
+                {/* Up */}
+                <Button variant={'default'} size={'icon'} onClick={() => {
+                  handleUpMove(data.id, data.imageUrl, data.order);
+                }}
+                >
+                  <ArrowUp></ArrowUp>
+                </Button>
+              </div>
+
+              <div className='flex'>
+                {/* Down */}
                 <Button variant={'default'} size={'icon'} onClick={() => {
                   handleDownMove(data.id, data.imageUrl, data.order);
                 }}
