@@ -15,7 +15,7 @@ const CreateBlogAction = async (values: z.infer<typeof CreatePostSchema>) => {
         return { error: "Invalid fields!" }
     }
 
-    const { title, content } = validatedFields.data;
+    const { title, content, videoUrl } = validatedFields.data;
 
 
     //Check if the title exists
@@ -34,7 +34,7 @@ const CreateBlogAction = async (values: z.infer<typeof CreatePostSchema>) => {
         const supabase = createClient();
         const response = await supabase
             .from('posts')
-            .insert({ title, content, slug: slugify, imageUrl: "no-disponible.png" })
+            .insert({ title, content, videoUrl, slug: slugify, imageUrl: "no-disponible.png" })
 
     } catch (error) {
         return { error: "¡Algo ha salido mal!" }

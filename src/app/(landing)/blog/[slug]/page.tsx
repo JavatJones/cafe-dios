@@ -13,6 +13,7 @@ interface BlogParams {
   title: string;
   slug: string;
   imageUrl: string;
+  videoUrl: string;
   content: string;
   created_at: Date;
   keywords: string[];
@@ -84,6 +85,19 @@ const BlogIdPage = async ({ params }: Props) => {
 
 
         <p>{post.content}</p>
+
+
+        {
+          ((post.videoUrl !== '') || (post.videoUrl !== null) || (post.videoUrl !== undefined)) ?
+
+            <div className='flex flex-col items-center justify-center'>
+              <iframe className='w-full max-w-5xl h-[600px]' src={post.videoUrl} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            </div>
+
+            :
+            null
+        }
+
 
       </article>
 

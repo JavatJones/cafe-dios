@@ -80,7 +80,7 @@ const ProductPage = async ({ params }: Props) => {
                     <Link href={`/menu/${category.slug}`} className='font-medium text-md'>{category.name}</Link>
                 </div>
             </div>
-            <div className='flex flex-col lg:flex-row'>
+            <div className='flex flex-col lg:flex-row gap-10'>
                 <div className='flex w-12/12 lg:w-6/12 items-center justify-center'>
                     <Image
                         alt={product.name}

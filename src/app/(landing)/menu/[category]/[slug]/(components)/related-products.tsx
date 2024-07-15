@@ -56,8 +56,7 @@ const RelatedProducts = async ({ params }: Props) => {
                                         <img
                                             src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/Images/${data.imageUrl}`}
                                             alt={data.name}
-                                            height={150}
-                                            width={150}
+                                            className='w-52 h-52 group-hover:scale-110 transition duration-300 object-cover object-center rounded-full'
                                         ></img>
 
 

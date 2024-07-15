@@ -42,13 +42,12 @@ const MenuCategories = async ({ id }: subCategoryProp) => {
 
                 <Link key={category.id} href={`/menu/${category.slug}`} className='group'>
                     <section className='flex flex-col space-y-5 items-center'>
-                        <Image
+                        <img
                             alt={category.name}
                             src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/Images/${category.imageUrl}`}
-                            width={200}
-                            height={200}
-                            className='group-hover:scale-110 transition duration-300'
-                        ></Image>
+                           
+                            className='w-52 h-52 group-hover:scale-110 transition duration-300 object-cover object-center rounded-full'
+                        />
                         <article>
                             <p>{category.name}</p>
                         </article>

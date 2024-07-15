@@ -50,12 +50,12 @@ interface EditProps {
     id: string;
     title: string;
     content: string;
-
+    videoUrl: string;
 }
 
 
 
-const EditPost = ({ id, title, content }: EditProps) => {
+const EditPost = ({ id, title, content, videoUrl }: EditProps) => {
 
     const [error, setError] = useState<string | undefined>("");
     const [success, setSuccess] = useState<string | undefined>("");
@@ -70,6 +70,7 @@ const EditPost = ({ id, title, content }: EditProps) => {
             id: id,
             title: title,
             content: content,
+            videoUrl: videoUrl,
         },
     });
 
@@ -134,6 +135,20 @@ const EditPost = ({ id, title, content }: EditProps) => {
                                         <FormLabel>Contenido</FormLabel>
                                         <FormControl>
                                             <Textarea className='min-h-48 max-h-48'  {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+                            <FormField
+                                control={form.control}
+                                name="videoUrl"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Link de video</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder='opcional' {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

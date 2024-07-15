@@ -71,13 +71,12 @@ const categoriesPage = async ({ params }: Props) => {
 
 
                         <section className='flex flex-col space-y-5 items-center'>
-                            <Image
+                            <img
                                 alt={product.name}
                                 src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/Images/${product.imageUrl}`}
-                                width={200}
-                                height={200}
-                                className='group-hover:scale-110 transition duration-300'
-                            ></Image>
+                              
+                                className='w-52 h-52 group-hover:scale-110 transition duration-300 object-cover object-center rounded-full'
+                            ></img>
                             <article>
                                 <p className="font-bold">{product.name}</p>
                             </article>

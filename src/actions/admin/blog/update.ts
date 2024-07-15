@@ -15,7 +15,7 @@ const UpdateBlogAction = async (values: z.infer<typeof UpdatePostSchema>) => {
         return { error: "Invalid fields!" }
     }
 
-    const { id, title, content } = validatedFields.data;
+    const { id, title, content, videoUrl } = validatedFields.data;
 
     //Check if the user exists
     const existing = await postById(id);
@@ -43,7 +43,7 @@ const UpdateBlogAction = async (values: z.infer<typeof UpdatePostSchema>) => {
         const supabase = createClient();
         const response = await supabase
             .from('posts')
-            .update({ title, content, slug: slugify })
+            .update({ title, videoUrl, content, slug: slugify })
             .eq('id', id)
     } catch (error) {
         return { error: "¡Algo ha salido mal!" }

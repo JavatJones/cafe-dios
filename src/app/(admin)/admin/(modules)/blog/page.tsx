@@ -32,6 +32,7 @@ interface PostSchema {
     slug: string;
     imageUrl: string;
     created_at: Date;
+    videoUrl: string;
 }
 
 const BlogPage = async () => {
@@ -77,7 +78,7 @@ const BlogPage = async () => {
                         </CardContent>
                         <CardFooter className='flex flex-col'>
                             {/* EDITAR */}
-                            <EditPost id={data.id} title={data.title} content={data.content}></EditPost>
+                            <EditPost id={data.id} title={data.title} content={data.content} videoUrl={data.videoUrl}></EditPost>
                             {/* IMAGEN */}
                             <ImageGestorUploader id={data.id} imageUrl={data.imageUrl}></ImageGestorUploader>
                             {/* ELIMINAR */}

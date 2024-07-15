@@ -129,6 +129,20 @@ const CreatePost = () => {
                                 )}
                             />
 
+                            <FormField
+                                control={form.control}
+                                name="videoUrl"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Link de video</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder='opcional' {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
 
                             <DialogFooter className='flex flex-row gap-5'>
                                 <DialogClose asChild>
