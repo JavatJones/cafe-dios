@@ -14,6 +14,6 @@ export const UpdatePostSchema = z.object({
     id: z.string(),
     title: z.string({ required_error: 'Requerido' }).min(1, "Requerido"),
     content: z.string({ required_error: 'Requerido' }).min(1, "Requerido"),
-    videoUrl: z.string().optional(),
+    videoUrl: z.string().default("").optional(),
 });
 

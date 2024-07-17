@@ -20,7 +20,7 @@ const DeleteBlogAction = async (values: z.infer<typeof byIdSchema>) => {
     const existing = await postById(id);
 
     if (!existing) {
-        return { error: "¡Algo ha salido mal!" }
+        return { error: "¡Algo ha salido mal! id" }
     }
 
     // Delete posts
@@ -31,7 +31,7 @@ const DeleteBlogAction = async (values: z.infer<typeof byIdSchema>) => {
             .delete()
             .eq('id', id)
     } catch (error) {
-        return { error: "¡Algo ha salido mal!" }
+        return { error: "¡Algo ha salido mal! func" }
     }
 
     return { success: `¡Eliminado!` }

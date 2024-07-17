@@ -1,6 +1,8 @@
 "use client"
 import React from 'react'
-import { useRouter } from 'next/navigation'
+
+import { useRouter } from "next/navigation";
+
 import { useState } from 'react';
 
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -71,6 +73,9 @@ const DeletePost = ({ id }: DeleteSCProps) => {
 
                     if (data.error === undefined) {
                         router.refresh();
+                        router.replace("/admin");
+                        router.refresh();
+                      
                     }
 
                     toast.success(data.success)
@@ -79,7 +84,10 @@ const DeletePost = ({ id }: DeleteSCProps) => {
                 }).catch((error) => {
                     console.log(error)
                 })
+
         });
+
+
     };
 
     return (

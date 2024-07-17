@@ -70,7 +70,7 @@ const EditPost = ({ id, title, content, videoUrl }: EditProps) => {
             id: id,
             title: title,
             content: content,
-            videoUrl: videoUrl,
+            videoUrl: videoUrl || "",
         },
     });
 

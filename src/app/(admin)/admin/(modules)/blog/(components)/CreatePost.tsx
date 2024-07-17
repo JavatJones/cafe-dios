@@ -108,7 +108,7 @@ const CreatePost = () => {
                                     <FormItem>
                                         <FormLabel>Titulo</FormLabel>
                                         <FormControl>
-                                            <Input {...field} />
+                                            <Input {...field} disabled={isPending}/>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -122,7 +122,7 @@ const CreatePost = () => {
                                     <FormItem>
                                         <FormLabel>Contenido</FormLabel>
                                         <FormControl>
-                                            <Textarea className='min-h-48 max-h-48' {...field} />
+                                            <Textarea className='min-h-48 max-h-48' {...field} disabled={isPending}/>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -136,7 +136,7 @@ const CreatePost = () => {
                                     <FormItem>
                                         <FormLabel>Link de video</FormLabel>
                                         <FormControl>
-                                            <Input placeholder='opcional' {...field} />
+                                            <Input placeholder='opcional' {...field} disabled={isPending}/>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

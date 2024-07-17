@@ -119,7 +119,7 @@ const ImageGestorUploader = ({ id, imageUrl }: getThings) => {
                     toast.error("Error")
                 }
             }
-
+            router.refresh()
         } catch (error) {
             toast.error("Error")
         }

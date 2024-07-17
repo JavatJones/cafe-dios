@@ -65,7 +65,7 @@ const BlogPage = async () => {
               </CardHeader>
               <CardContent>
 
-                <p>{data.title}</p>
+                <p className='truncate'>{data.title}</p>
 
               </CardContent>
               <CardFooter>
