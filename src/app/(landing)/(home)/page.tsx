@@ -23,6 +23,9 @@ import coffee_book from "@/assets/images/coffee_book.webp"
 //data
 import { getAllAnnouncementsByOrder } from "@/data/announcements"
 
+export const metadata = {
+  title: 'Inicio',
+}
 
 const HomePage = async () => {
 

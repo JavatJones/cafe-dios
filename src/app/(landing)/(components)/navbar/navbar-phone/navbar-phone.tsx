@@ -70,7 +70,7 @@ const NavbarPhoneComponent = async () => {
 
                         <Button variant={'outline'} asChild>
                             <Link href={"/blog"}>
-                                blog
+                                Blog
                             </Link>
                         </Button>
 
